@@ -1,3 +1,7 @@
+<?php 
+  require_once(PRIVATE_PATH .'\functions.php');
+?>
+
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -10,8 +14,8 @@
     <header>
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand fs-1" href="index.php">LMS</a>  
-        </div>        
+          <span class="navbar-brand fs-1" href="index.php">LMS</span>  
+        </div>
         <button 
           class="navbar-toggler" 
           type="button" 
@@ -22,19 +26,22 @@
           aria-label="Toggle navigation">       
             <span class="navbar-toggler-icon"></span>   
         </button> 
-        <div class="container-fluid text-center text-light">
-          <span class="navbar-brand mb-0 h1">Library Management System</span>
+        <div class="container-fluid text-light">
+          <span class="navbar-brand mb-0 h1 fs-2">Library Management System</span>
         </div> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">             
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link fs-3 text-warning" aria-current="page" href="#">Home</a>
+            <li class="nav-item mx-1">
+              <a class="nav-link fs-3 text-warning" aria-current="page" 
+                href="<?php echo url_for('/auth/register.php'); ?>">
+                Register
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link fs-3 text-warning" aria-current="page" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-3 text-warning" aria-current="page" href="#">Login</a>
+            <li class="nav-item mx-1">
+              <a class="nav-link fs-3 text-warning" aria-current="page" 
+                href="<?php echo url_for('/auth/login.php'); ?>">
+                Login
+              </a>
             </li>
           </ul>
         </div>
