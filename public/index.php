@@ -1,14 +1,12 @@
-<html>
-  <head>
-    <title>LMS</title>
-  </head>
-  <body>
-    <header>
-      <h1>Github branching is easy</h1>
-    </header>
-    <b>I hope this works</b>
-    <footer>
-      <b>Everyone needs a footer</b>
-    </footer>
-  </body>
-</html>
+<?php 
+  include('../private/initialize.php');
+  include(LAYOUT_PATH .'/header.php');
+?>
+
+      <h1>Library Management System</h1>
+
+<?php 
+  include(LAYOUT_PATH .'/footer.php');
+?>
+
+    
