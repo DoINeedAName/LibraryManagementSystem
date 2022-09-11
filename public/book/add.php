@@ -7,28 +7,53 @@
   <div class="row">
     <h1 class="text-center mt-3">Create Book</h1>
   </div>
-  <div class="row">
+  <div class="form-check">
     <form>
       <div class="row mb-3">
-        <label class="form-label fs-3">Title</label>
-        <input type="text" class="form-control">
+        <div class="col-3">
+          <label class="form-label fs-3">Title:</label>
+        </div>
+        <div class="col-8">
+          <input type="text" class="form-control">
+        </div>
       </div>
       <div class="row mb-3">
-        <label class="form-label fs-3">Author</label>
-        <input type="text" class="form-control">
+        <div class="col-3">
+          <label class="form-label fs-3">Author:</label>
+        </div>
+        <div class="col-8">
+          <input type="text" class="form-control">
+        </div>
       </div>
       <div class="row mb-3">
-        <label class="form-label fs-3">Subject</label>
-        <input type="text" class="form-control">
+        <div class="col-3">
+          <label class="form-label fs-3">Subject:</label>
+        </div>
+        <div class="col-8">
+          <input type="text" class="form-control">
+        </div>
       </div>
       <div class="row mb-3">
-        <label class="form-label fs-3">Available</label>
-        <input type="text" class="form-control">
+        <div class="col">
+          <label class="form-label fs-3">Available</label>
+        </div>
+        <div class="col">
+          <input type="radio" id="yes" name="available" class="btn-check" >
+          <label class="btn btn-outline-primary btn-lg" for="yes" value="yes">Yes</label>
+        </div>
+        <div class="col">
+          <input type="radio" class="btn-check" id="no" name="available">
+          <label class="btn btn-outline-primary btn-lg" for="no" value="no">No</label>
+        </div>
       </div>
-      <div class="row mb-3">
-        <label class="form-label fs-3">Entered by</label>
-        <input type="text" class="form-control">
-      </div>
+        <div class="row mb-3">
+          <div class="col-3">
+            <label class="form-label fs-3">Entered By:</label>
+          </div>
+          <div class="col-8">
+            <input type="text" class="form-control">
+          </div>
+        </div>
       <div class="row mb-3 text-center">
         <div class="col">
           <button class="btn btn-primary" type="submit">Create Book</button>
