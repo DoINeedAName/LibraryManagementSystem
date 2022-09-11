@@ -50,13 +50,7 @@
       <a class="text-dark text-decoration-none" href="add.php">Add new book</a>
     </button>
   </div>
-</div>
-
-
-<div class="table-responsive-xxl mt-3">
-  
-</div>
-  
+</div> 
 
 <?php 
   include(LAYOUT_PATH .'/footer.php');

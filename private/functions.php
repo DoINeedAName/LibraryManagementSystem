@@ -34,9 +34,5 @@ function url_for($script_path=""){
       throw new Exception("Availability not entered or entered incorrectly");
     }
   }
-
-  // return WWW_ROOT.'/'.$script_path;
-
-
   
 ?>
