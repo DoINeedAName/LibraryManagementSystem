@@ -1,27 +1,42 @@
 <?php
 
 // Checks if there is a script path
+function url_for($script_path=""){
+  if(strlen($script_path) !=0 && $script_path[0] !='/'){
+    $script_path = '/'.$script_path;
+  }
+  else{
+    throw new Exception("Forgot to enter URL");
+  }
+  return WWW_ROOT.$script_path;
+}
 
+  // Retrieves the subject_id and returns the subject_name
+  function subject_id_to_name($id){
+    try{
+      $subject = find_subject_by_id($id);
+      $subject_name = $subject['subject_name'];
+      return ($subject_name);
+    }
+    catch(Exception $e){
+      echo 'Error: ' .$e->getMessage();
+    }
+  }
 
-  // My way
-  function url_for($script_path){
-    if(strlen($script_path) !=0){
-      return WWW_ROOT.$script_path;
+  function check_availability($value){
+    if($value=='1'){
+      echo("Yes"); 
+    }
+    elseif($value=='0'){
+      echo("No");
     }
     else{
-      echo("Forgot to enter URL");
+      throw new Exception("Availability not entered or entered incorrectly");
     }
   }
 
   // return WWW_ROOT.'/'.$script_path;
 
 
-  // The Jefi way. Not sure if all of it is neccessary
-  // function url_for($script_path=""){
-  //   if(strlen($script_path) !=0 && $script_path[0] !='/'){
-  //     $script_path = '/'.$script_path;
-  //   }
-
-  //   return WWW_ROOT.$script_path;
-  // }
+  
 ?>

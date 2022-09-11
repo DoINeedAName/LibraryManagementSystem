@@ -33,13 +33,13 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-1">
               <a class="nav-link fs-3 text-warning" aria-current="page" 
-                href="<?php echo url_for('/auth/register.php'); ?>">
+                href="<?php echo url_for('auth/register.php'); ?>">
                 Register
               </a>
             </li>
             <li class="nav-item mx-1">
               <a class="nav-link fs-3 text-warning" aria-current="page" 
-                href="<?php echo url_for('/auth/login.php'); ?>">
+                href="<?php echo url_for('auth/login.php'); ?>">
                 Login
               </a>
             </li>
