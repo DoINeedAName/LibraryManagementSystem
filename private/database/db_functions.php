@@ -41,7 +41,7 @@
       $sql .= "`book_author` ='".$book['book_author']. "', ";
       $sql .= "`subject_id` ='".$book['subject_id']. "', ";
       $sql .= "`available` ='".$book['available']. "', ";
-      $sql .= "WHERE id ='".$book['book_id']. "';";
+      $sql .= "WHERE `book_id` ='".$book['book_id']. "';";
 
       $result = mysqli_query($db, $sql);
 
@@ -55,6 +55,21 @@
     }
     catch(Exception $e) {
       echo 'ERROR: ' .$e->getmessage();
+    }
+  }
+
+  function delete_book($id) {
+    global $db;
+
+    $sql  = "DELETE FROM `books` ";
+    $sql .= "WHERE `book_id`='".$id. "';";
+
+    $result = mysqli_query($db, $sql);
+
+    if($result) return true;
+    else {
+      echo mysqli_error($db);
+      db_disconnect($db);
     }
   }
 

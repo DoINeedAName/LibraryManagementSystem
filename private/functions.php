@@ -61,5 +61,10 @@ function url_for($script_path=""){
   function this(){
     return htmlspecialchars($_SERVER["PHP_SELF"]);
   }
+
+  // function call_delete(){
+  //   $id = $_GET['id']; 
+  //   delete_book($id); 
+  // }
   
 ?>

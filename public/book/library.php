@@ -37,14 +37,10 @@
                 <button type="button" class="btn btn-warning fs-4">Edit</button>
               </a>
                <!-- Delete will probably call a function later -->
-              <a class="text-light text-decoration-none" href="#">
+              <a class="text-light text-decoration-none" 
+                  href="<?php echo 'delete.php?id='.urlencode($book['book_id']);?>">
                 <button type="button" class="btn btn-danger fs-4">Delete</button>
-              </a>
-              
-             
-              
-               
-              
+              </a>  
             </td>
           </tr>
         <?php } ?>
