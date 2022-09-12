@@ -32,13 +32,18 @@
             <td> <?php echo subject_id_to_name($book['subject_id']); ?></td>
             <td> <?php check_availability($book['available']); ?></td>
             <td>
-              <button type="button" class="btn btn-warning fs-4">
-                <a class="text-dark text-decoration-none" href="edit.php">Edit</a>
-              </button>
-              <!-- Delete will probably call a function later -->
-              <button type="button" class="btn btn-danger fs-4">
-                <a class="text-light text-decoration-none" href="#">Delete</a>
-              </button>
+              <a class="text-dark text-decoration-none" href="edit.php">
+                <button type="button" class="btn btn-warning fs-4">Edit</button>
+              </a>
+               <!-- Delete will probably call a function later -->
+              <a class="text-light text-decoration-none" href="#">
+                <button type="button" class="btn btn-danger fs-4">Delete</button>
+              </a>
+              
+             
+              
+               
+              
             </td>
           </tr>
         <?php } ?>
@@ -46,9 +51,11 @@
     </table>
   </div>
   <div class="row col-3 mx-auto">
-    <button type="button" class="btn btn-warning btn-lg">
-      <a class="text-dark text-decoration-none" href="add.php">Add new book</a>
-    </button>
+    
+      <a class="text-dark text-decoration-none" href="add.php">
+        <button type="button" class="btn btn-warning btn-lg">Add new book</button>
+      </a>
+    
   </div>
 </div> 
 

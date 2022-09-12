@@ -15,6 +15,21 @@
     return $result;
   }
 
+  function find_all_subjects(){
+    global $db;
+
+    try{
+      $sql  = "SELECT * FROM subjects";
+      $sql .= " ORDER BY subject_id;";
+      $result = mysqli_query($db, $sql);
+    }
+    catch(Exception $e){
+      echo 'ERROR: ' .$e->getMessage();
+    }
+    
+    return $result;
+  }
+
   function find_subject_by_id($id){
     global $db;
 
@@ -45,17 +60,17 @@
       $sql .= "'" . $user . "');";
   
       $result = mysqli_query($db, $sql);
+
+      if($result){
+        $new_id = mysqli_insert_id($db);
+      }
+      else {
+        echo mysqli_error($db);
+        db_disconnect($db);
+      }
     }
    catch(Exception $e){
     echo 'ERROR: ' .$e->getMessage();
-   }
-
-   if($result){
-    $new_id = mysqli_insert_id($db);
-   }
-   else {
-    echo mysqli_error($db);
-    db_disconnect($db);
    }
   }
   
