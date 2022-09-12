@@ -35,13 +35,12 @@
   function edit_book($book){
     global $db;
 
-    try{
       $sql  = "UPDATE `books` SET ";
       $sql .= "`book_name` ='".$book['book_name']. "', ";
       $sql .= "`book_author` ='".$book['book_author']. "', ";
       $sql .= "`subject_id` ='".$book['subject_id']. "', ";
       $sql .= "`available` ='".$book['available']. "', ";
-      $sql .= "WHERE `book_id` ='".$book['book_id']. "';";
+      $sql .= "WHERE book_id='".$book['book_id']. "';";
 
       $result = mysqli_query($db, $sql);
 
@@ -52,10 +51,6 @@
         echo mysqli_error($db);
         db_disconnect($db);
       }
-    }
-    catch(Exception $e) {
-      echo 'ERROR: ' .$e->getmessage();
-    }
   }
 
   function delete_book($id) {

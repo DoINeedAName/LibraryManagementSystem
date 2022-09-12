@@ -14,7 +14,7 @@
   if(post_request()){
     $book = [];
 
-    $id = $book['book_id'] = $_POST['id'] ?? 1;
+    $id = $book['book_id'] = $_POST['book_id'];
     $title = $book['book_name'] = $_POST['title'] ?? '';
     $author = $book['book_author']= $_POST['author'] ?? '';
     $insert_subject = $book['subject_id'] = $_POST['subject'] ?? '';
