@@ -23,6 +23,17 @@ function url_for($script_path=""){
     }
   }
 
+  function subject_name_to_id($name){
+    try{
+      $subject = find_subject_by_id($name);
+      $subject_id = $subject['subject_id'];
+      return ($subject_id);
+    }
+    catch(Exception $e){
+      echo 'Error: ' .$e->getMessage();
+    }
+  }
+
   function check_availability($value){
     if($value=='1'){
       echo("Yes"); 
@@ -33,6 +44,18 @@ function url_for($script_path=""){
     else{
       throw new Exception("Availability not entered or entered incorrectly");
     }
+  }
+
+  function redirect_to($location){
+    header("Location: ". $location);
+  }
+
+  function post_request(){
+    return $_SERVER['REQUEST_METHOD']=='POST';
+  }
+
+  function get_request(){
+    return $_SERVER['REQUEST_METHOD']=='GET';
   }
   
 ?>
