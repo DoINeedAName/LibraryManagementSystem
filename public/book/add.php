@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
       <div class="form-check">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form method="post" action="<?php echo this();?>">
           <div class="form-floating mb-3">
             <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" required>
             <label class="" for="title">Title:</label>
@@ -32,7 +32,7 @@
             <label for="subject">Subject:</label>
           </div>
           <div class="form-floating mb-2">
-            <input type="text" name="user" class="form-control" id="entered" placeholder="Enter title" required>
+            <input type="number" name="user" class="form-control" id="entered" placeholder="Enter title" required>
             <label class="" for="entered">Entered by:</label>
           </div>
           <div class="mb-3">

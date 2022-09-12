@@ -15,6 +15,49 @@
     return $result;
   }
 
+  function find_book_with_id($id){
+    global $db;
+    try {
+      $sql  = "SELECT * FROM books";
+      $sql .= " WHERE book_id='". $id ."';";
+      $result = mysqli_query($db, $sql);
+
+      $book = mysqli_fetch_assoc($result);
+      mysqli_free_result($result);
+    }
+    catch (Exception $e){
+      echo 'ERROR: ' .$e->getmessage();
+    }
+
+    return $book;
+  }
+
+  function edit_book($book){
+    global $db;
+
+    try{
+      $sql  = "UPDATE `books` SET ";
+      $sql .= "`book_name` ='".$book['book_name']. "', ";
+      $sql .= "`book_author` ='".$book['book_author']. "', ";
+      $sql .= "`subject_id` ='".$book['subject_id']. "', ";
+      $sql .= "`available` ='".$book['available']. "', ";
+      $sql .= "WHERE id ='".$book['book_id']. "';";
+
+      $result = mysqli_query($db, $sql);
+
+      if($result) {
+        return true;
+      }
+      else{
+        echo mysqli_error($db);
+        db_disconnect($db);
+      }
+    }
+    catch(Exception $e) {
+      echo 'ERROR: ' .$e->getmessage();
+    }
+  }
+
   function find_all_subjects(){
     global $db;
 
@@ -69,7 +112,7 @@
         db_disconnect($db);
       }
     }
-   catch(Exception $e){
+    catch(Exception $e){
     echo 'ERROR: ' .$e->getMessage();
    }
   }

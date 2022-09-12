@@ -32,7 +32,8 @@
             <td> <?php echo subject_id_to_name($book['subject_id']); ?></td>
             <td> <?php check_availability($book['available']); ?></td>
             <td>
-              <a class="text-dark text-decoration-none" href="edit.php">
+              <a class="text-dark text-decoration-none" 
+                  href="<?php echo 'edit.php?id='.urlencode($book['book_id']);?>">
                 <button type="button" class="btn btn-warning fs-4">Edit</button>
               </a>
                <!-- Delete will probably call a function later -->
