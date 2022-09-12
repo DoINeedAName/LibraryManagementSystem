@@ -32,6 +32,32 @@
     return $book;
   }
 
+  function add_book($title, $author, $subject, $available, $user){
+    global $db;
+
+    try {
+      $sql  = "INSERT INTO books (`book_name`, `book_author`, `subject_id`, `available`, `user_id`) VALUES (";
+      $sql .= "'" . $title . "', ";
+      $sql .= "'" . $author . "', ";
+      $sql .= "'" . $subject . "', ";
+      $sql .= "'" . $available . "', ";
+      $sql .= "'" . $user . "');";
+  
+      $result = mysqli_query($db, $sql);
+
+      if($result){
+        $new_id = mysqli_insert_id($db);
+      }
+      else {
+        echo mysqli_error($db);
+        db_disconnect($db);
+      }
+    }
+    catch(Exception $e){
+    echo 'ERROR: ' .$e->getMessage();
+   }
+  }
+
   function edit_book($book){
     global $db;
 
@@ -106,30 +132,25 @@
     return $subject;
   }
 
-  function add_book($title, $author, $subject, $available, $user){
+  function create_user($user){
     global $db;
 
-    try {
-      $sql  = "INSERT INTO books (`book_name`, `book_author`, `subject_id`, `available`, `user_id`) VALUES (";
-      $sql .= "'" . $title . "', ";
-      $sql .= "'" . $author . "', ";
-      $sql .= "'" . $subject . "', ";
-      $sql .= "'" . $available . "', ";
-      $sql .= "'" . $user . "');";
-  
-      $result = mysqli_query($db, $sql);
+    $hashed_password = password_hash($user['password'], PASSWORD_BCRYPT);
 
-      if($result){
-        $new_id = mysqli_insert_id($db);
-      }
-      else {
-        echo mysqli_error($db);
-        db_disconnect($db);
-      }
-    }
-    catch(Exception $e){
-    echo 'ERROR: ' .$e->getMessage();
-   }
+    $sql  = "INSERT INTO users ";
+    $sql .= "(first_name, last_name, email, username, password) ";
+    $sql .= "VALUES (";
+    $sql .= "'" .db_escape($db, $user['first_name']) . "', ";
+    $sql .= "'" .db_escape($db, $user['last_name']) . "', ";
+    $sql .= "'" .db_escape($db, $user['email']) . "', ";
+    $sql .= "'" .db_escape($db, $user['username']) . "', ";
+    $sql .= "'" .db_escape($db, $hashed_password) . "'); ";
+
+
+    $result = mysqli_query($db, $sql);
+
+    return $result;
+
   }
   
 ?>
