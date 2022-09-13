@@ -12,33 +12,37 @@
   $available = '';
 
   if(post_request()){
+   
     $book = [];
 
-    $id = $book['book_id'] = $_POST['id'] ?? 1;
+    $id = $book['book_id'] = $_GET['id'];
     $title = $book['book_name'] = $_POST['title'] ?? '';
     $author = $book['book_author']= $_POST['author'] ?? '';
     $insert_subject = $book['subject_id'] = $_POST['subject'] ?? '';
     $available = $book['available'] = $_POST['available'] ?? '';
 
     edit_book($book);
-    echo "book edited yay"
+    
     // redirect_to('library.php');
   }
   else {
-    if(!isset($_GET['id'])){
-      redirect_to('library.php');
+      if(!isset($_GET['id'])){
+        redirect_to('library.php');
+      }
+      else {
+        $id = $_GET['id'];
+        echo $id;
+      }
+    
+      $book = find_book_with_id($id);
+      $title = $book['book_name'];
+      $author = $book['book_author'];
+      $insert_subject = $book['subject_id'];
+      $available = $book['available']; 
     }
-    else {
-      $id = $_GET['id'];
-    }
-
-    $book = find_book_with_id($id);
-    $title = $book['book_name'];
-    $author = $book['book_author'];
-    $insert_subject = $book['subject_id'];
-    $available = $book['available'];
-  }
-?>
+  ?>
+ 
+  
 
 <div class="container">
   <div class="card m-3">

@@ -6,7 +6,7 @@ function url_for($script_path=""){
     $script_path = '/'.$script_path;
   }
   else{
-    throw new Exception("Forgot to enter URL");
+    // throw new Exception("Forgot to enter URL");
   }
   return WWW_ROOT.$script_path;
 }
@@ -64,15 +64,23 @@ function url_for($script_path=""){
 
   function sign_in($user){
     session_start();
-    $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['id'] = $user['user_id'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['last_login'] = time();
   }
 
   function log_out_user(){
-    unset($_SESSION['user_id']);
+    unset($_SESSION['id']);
     unset($_SESSION['email']);
     unset($_SESSION['last_login']);
+    // redirect_to(url_for('/index.php'));
+  }
+
+  function redirect_to_login(){
+    session_start();
+    if(basename($_SERVER['SCRIPT_NAME'])!='login.php' and !isset($_SESSION['id'])){
+      redirect_to(url_for('/auth/login.php'));
+    }
   }
   
 ?>

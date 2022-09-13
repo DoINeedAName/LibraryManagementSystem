@@ -4,4 +4,5 @@
 
   log_out_user();
   redirect_to('../index.php');
+  
 ?>

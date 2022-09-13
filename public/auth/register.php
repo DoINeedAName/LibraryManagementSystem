@@ -73,7 +73,9 @@
       redirect_to('../book/library.php');
     }
     else {
-      echo("Passwords do not match!");
+      echo '<div class="alert alert-danger text-center" role="alert">';
+      echo 'Passwords do not match!';
+      echo '</div>';
     }
   }
 ?>

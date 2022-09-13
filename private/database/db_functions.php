@@ -36,7 +36,7 @@
     global $db;
 
     try {
-      $sql  = "INSERT INTO books (`book_name`, `book_author`, `subject_id`, `available`, `user_id`) VALUES (";
+      $sql  = "INSERT INTO books (`book_name`, `book_author`, `subject_id`, `available`) VALUES (";
       $sql .= "'" . $title . "', ";
       $sql .= "'" . $author . "', ";
       $sql .= "'" . $subject . "', ";
@@ -67,7 +67,8 @@
       $sql .= "`book_author` ='".$book['book_author']. "', ";
       $sql .= "`subject_id` ='".$book['subject_id']. "', ";
       $sql .= "`available` ='".$book['available']. "', ";
-      $sql .= "WHERE `book_id` ='".$book['book_id']. "';";
+      // $sql .= "`user_id` = '".$book['user_id']. "', ";
+      $sql .= "WHERE book_id='".$book['book_id']. "';";
 
       $result = mysqli_query($db, $sql);
 
@@ -146,7 +147,6 @@
     $sql .= "'" .db_escape($db, $user['username']) . "', ";
     $sql .= "'" .db_escape($db, $hashed_password) . "'); ";
 
-
     $result = mysqli_query($db, $sql);
 
     return $result;
@@ -165,6 +165,5 @@
     mysqli_free_result($result);
 
     return $user;
-  }
-  
+  } 
 ?>

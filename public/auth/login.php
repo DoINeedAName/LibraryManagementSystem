@@ -50,7 +50,7 @@ $user = [];
           </div>
           <div class="row mb-3 text-center">
             <div class="container">
-              <button class="btn btn-primary btn-lg m-1" type="submit" value="register">Register</button>
+              <button class="btn btn-primary btn-lg m-1" type="submit" value="register">Login</button>
             </div>
           </div>
           <div class="row mb-3 text-center">
