@@ -150,7 +150,21 @@
     $result = mysqli_query($db, $sql);
 
     return $result;
+  }
 
+  function find_user_with_email($email){
+    global $db;
+
+    $sql  = "SELECT * FROM users";
+    $sql .= " WHERE email='". db_escape($db, $email) ."'";
+    $sql .= "LIMIT 1;";
+
+    $result = mysqli_query($db, $sql);
+
+    $user= mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+
+    return $user;
   }
   
 ?>

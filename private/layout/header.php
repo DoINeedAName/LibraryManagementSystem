@@ -31,7 +31,7 @@
         </div> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">             
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-1">
+              <li class="nav-item mx-1">
               <a class="nav-link fs-3 text-warning" aria-current="page" 
                 href="<?php echo url_for('auth/register.php'); ?>">
                 Register
@@ -43,7 +43,39 @@
                 Login
               </a>
             </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link fs-3 text-warning" aria-current="page" 
+                href="<?php echo url_for('auth/logout.php'); ?>">
+                Logout
+              </a>
+            </li>  
           </ul>
         </div>
       </nav>
     </header>
+
+    <!-- <?php if(!isset($_SESSION['email'])) { ?>
+              <li class="nav-item mx-1">
+              <a class="nav-link fs-3 text-warning" aria-current="page" 
+                href="<?php echo url_for('auth/register.php'); ?>">
+                Register
+              </a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="nav-link fs-3 text-warning" aria-current="page" 
+                href="<?php echo url_for('auth/login.php'); ?>">
+                Login
+              </a>
+            </li>
+            <?php 
+              } 
+                else{
+            ?>
+            <li class="nav-item mx-1">
+              <a class="nav-link fs-3 text-warning" aria-current="page" 
+                href="<?php echo url_for('auth/register.php'); ?>">
+                logout
+              </a>
+            </li>
+            
+            <?php } ?> -->

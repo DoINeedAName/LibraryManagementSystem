@@ -21,7 +21,8 @@
     $available = $book['available'] = $_POST['available'] ?? '';
 
     edit_book($book);
-    redirect_to('library.php');
+    echo "book edited yay"
+    // redirect_to('library.php');
   }
   else {
     if(!isset($_GET['id'])){

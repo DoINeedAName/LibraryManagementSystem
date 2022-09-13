@@ -62,9 +62,17 @@ function url_for($script_path=""){
     return htmlspecialchars($_SERVER["PHP_SELF"]);
   }
 
-  // function call_delete(){
-  //   $id = $_GET['id']; 
-  //   delete_book($id); 
-  // }
+  function sign_in($user){
+    session_start();
+    $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['last_login'] = time();
+  }
+
+  function log_out_user(){
+    unset($_SESSION['user_id']);
+    unset($_SESSION['email']);
+    unset($_SESSION['last_login']);
+  }
   
 ?>

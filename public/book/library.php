@@ -9,7 +9,14 @@
 
 <div class="container">
   <div class="row">
-    <h1 class="text-center mt-3">Library Management System</h1>
+    <?php 
+      if(isset($_SESSION['user_id'])) {
+        echo ('<h1 class="text-center mt-3">Hello there</h1>');
+      }
+      else {
+        echo '<h1 class="text-center mt-3">Library Management System</h1>';
+      }
+    ?>
   </div>
   <div class="row table-responsive-xxl">
     <table class="table table-bordered table-striped text-center fs-4">
