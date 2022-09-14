@@ -23,7 +23,7 @@
 
     edit_book($book);
     
-    // redirect_to('library.php');
+    redirect_to('library.php');
   }
   else {
       if(!isset($_GET['id'])){

@@ -1,5 +1,6 @@
 <?php 
   require_once(PRIVATE_PATH .'\functions.php');
+  session_start();
 ?>
 
 <!doctype html>
@@ -27,28 +28,43 @@
             <span class="navbar-toggler-icon"></span>   
         </button> 
         <div class="container-fluid text-light">
-          <span class="navbar-brand mb-0 h1 fs-2">Library Management System</span>
+          <span class="navbar-brand mb-0 h1 fs-2"><?php 
+          if(!isset($_SESSION['email'])){
+             echo 'Logged out hooray';
+          }
+          else {
+            echo $_SESSION['email'];
+          }?>
+          </span>
         </div> 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-1">
+          <?php if(isset($_SESSION['email'])) { echo '
+             <li class="nav-item mx-1">
               <a class="nav-link fs-3 text-warning" aria-current="page" 
-                href="<?php echo url_for('auth/logout.php'); ?>">
-                Logout
-              </a>
-            </li>  
-            <li class="nav-item mx-1">
-              <a class="nav-link fs-3 text-warning" aria-current="page" 
-                href="<?php echo url_for('auth/register.php'); ?>">
-                Register
+                href="../auth/logout.php">
+                logout
               </a>
             </li>
-            <li class="nav-item mx-1">
-              <a class="nav-link fs-3 text-warning" aria-current="page" 
-                href="<?php echo url_for('auth/login.php'); ?>">
-                Login
-              </a>
-            </li>
+            ';
+              } 
+                else{
+                  echo '
+
+                  <li class="nav-item mx-1">
+                  <a class="nav-link fs-3 text-warning" aria-current="page" 
+                    href="../public/auth/register.php">
+                    Register
+                  </a>
+                </li>
+                <li class="nav-item mx-1">
+                  <a class="nav-link fs-3 text-warning" aria-current="page" 
+                    href="../public/auth/login.php">
+                    Login
+                  </a>
+                </li>
+            
+            '; } ?>
           </ul>
         </div>
       </nav>
@@ -56,8 +72,7 @@
 
     <?php 
       // redirect_to_login();
-      echo $_SESSION['email']; 
-      ?>
+    ?>
 
     <!-- <?php if(!isset($_SESSION['email'])) { ?>
               <li class="nav-item mx-1">

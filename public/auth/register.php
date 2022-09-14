@@ -69,7 +69,7 @@
       if($result) {
         $new_id = mysqli_insert_id($db);
       }
-
+      
       redirect_to('../book/library.php');
     }
     else {

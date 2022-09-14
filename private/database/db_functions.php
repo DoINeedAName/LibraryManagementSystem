@@ -66,7 +66,7 @@
       $sql .= "`book_name` ='".$book['book_name']. "', ";
       $sql .= "`book_author` ='".$book['book_author']. "', ";
       $sql .= "`subject_id` ='".$book['subject_id']. "', ";
-      $sql .= "`available` ='".$book['available']. "', ";
+      $sql .= "`available` ='".$book['available']. "' ";
       // $sql .= "`user_id` = '".$book['user_id']. "', ";
       $sql .= "WHERE book_id='".$book['book_id']. "';";
 

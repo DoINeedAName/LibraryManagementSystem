@@ -70,6 +70,7 @@ function url_for($script_path=""){
   }
 
   function log_out_user(){
+    session_start();
     unset($_SESSION['id']);
     unset($_SESSION['email']);
     unset($_SESSION['last_login']);
@@ -81,6 +82,5 @@ function url_for($script_path=""){
     if(basename($_SERVER['SCRIPT_NAME'])!='login.php' and !isset($_SESSION['id'])){
       redirect_to(url_for('/auth/login.php'));
     }
-  }
-  
+  } 
 ?>
