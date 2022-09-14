@@ -23,17 +23,6 @@ function url_for($script_path=""){
     }
   }
 
-  // function subject_name_to_id($name){
-  //   try{
-  //     $subject = find_subject_by_id($name);
-  //     $subject_id = $subject['subject_id'];
-  //     return ($subject_id);
-  //   }
-  //   catch(Exception $e){
-  //     echo 'Error: ' .$e->getMessage();
-  //   }
-  // }
-
   function check_availability($value){
     if($value=='1'){
       echo("Yes"); 
@@ -66,6 +55,7 @@ function url_for($script_path=""){
     session_start();
     $_SESSION['id'] = $user['user_id'];
     $_SESSION['email'] = $user['email'];
+    // $_SESSION['username'] = $user['username'];
     $_SESSION['last_login'] = time();
   }
 
@@ -74,7 +64,7 @@ function url_for($script_path=""){
     unset($_SESSION['id']);
     unset($_SESSION['email']);
     unset($_SESSION['last_login']);
-    // redirect_to(url_for('/index.php'));
+    redirect_to(url_for('/index.php'));
   }
 
   function redirect_to_login(){

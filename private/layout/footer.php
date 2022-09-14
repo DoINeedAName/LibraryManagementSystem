@@ -1,5 +1,5 @@
 
-    <footer class="navbar fixed-bottom ">  
+    <footer class="navbar fixed-bottom mt-3">  
       <div class="bg-dark p-2 my-3 w-100">
           <p class="text-white text-center">
             LMS City of Casey Council Copyright &copy <?php echo date("Y");?>
@@ -10,3 +10,5 @@
     </footer>
   </body>
 </html>
+
+<?php db_disconnect($db); ?>

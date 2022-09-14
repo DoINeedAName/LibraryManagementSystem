@@ -31,10 +31,6 @@
             </select>
             <label for="subject">Subject:</label>
           </div>
-          <div class="form-floating mb-2">
-            <input type="number" name="user" class="form-control" id="entered" placeholder="Enter title" required>
-            <label class="" for="entered">Entered by:</label>
-          </div>
           <div class="mb-3">
             <label class="form-label fs-3 m-3">Available:</label>
             <input type="radio" id="yes" name="available" class="btn-check" value="1" required>
@@ -62,9 +58,8 @@
     $author = $_POST['author'];
     $insert_subject = $_POST['subject'];
     $available = $_POST['available'];
-    $user = $_POST['user'];
 
-    add_book($title, $author, $insert_subject, $available, $user);
+    add_book($title, $author, $insert_subject, $available);
     redirect_to('library.php');
   }
 ?>

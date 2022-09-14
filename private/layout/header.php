@@ -2,6 +2,7 @@
   require_once(PRIVATE_PATH .'\functions.php');
   session_start();
   redirect_to_login();
+  // check_for_error();
 ?>
 
 <!doctype html>
@@ -16,11 +17,11 @@
     <header>
       <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-          <span class="navbar-brand fs-1" href="index.php">LMS</span>  
+          <span class="navbar-brand fs-1">LMS</span>  
         </div>
-        <div class="container-fluid text-light">
+        <!-- <div class="container-fluid text-light">
           <span class="navbar-brand mb-0 h1 fs-2">Library Management System</span>
-        </div>
+        </div> -->
         <button 
           class="navbar-toggler" 
           type="button" 

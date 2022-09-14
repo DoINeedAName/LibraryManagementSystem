@@ -32,7 +32,7 @@
     return $book;
   }
 
-  function add_book($title, $author, $subject, $available, $user){
+  function add_book($title, $author, $subject, $available){
     global $db;
 
     try {
@@ -40,8 +40,8 @@
       $sql .= "'" . $title . "', ";
       $sql .= "'" . $author . "', ";
       $sql .= "'" . $subject . "', ";
-      $sql .= "'" . $available . "', ";
-      $sql .= "'" . $user . "');";
+      $sql .= "'" . $available . "'); ";
+      // $sql .= "'" . $user . "');";
   
       $result = mysqli_query($db, $sql);
 
