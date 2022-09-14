@@ -57,6 +57,7 @@
     echo 'ERROR: ' .$e->getMessage();
    }
   }
+  
 
   function edit_book($book){
     global $db;
@@ -67,7 +68,6 @@
       $sql .= "`book_author` ='".$book['book_author']. "', ";
       $sql .= "`subject_id` ='".$book['subject_id']. "', ";
       $sql .= "`available` ='".$book['available']. "' ";
-      // $sql .= "`user_id` = '".$book['user_id']. "', ";
       $sql .= "WHERE book_id='".$book['book_id']. "';";
 
       $result = mysqli_query($db, $sql);

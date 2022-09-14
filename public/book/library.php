@@ -3,6 +3,13 @@
   include(LAYOUT_PATH .'/header.php');
 ?>
 
+<script>
+  function confirmationOnDelete(){
+    var conf = confirm("Are you sure you want to delete this book?");
+    if(conf) window.location = anchor.attr("href");
+  }
+</script>
+
 <?php 
   $result = find_all_books();
 ?>
@@ -46,7 +53,7 @@
                <!-- Delete will probably call a function later -->
               <a class="text-light text-decoration-none" 
                   href="<?php echo 'delete.php?id='.urlencode($book['book_id']);?>">
-                <button type="button" class="btn btn-danger fs-4">Delete</button>
+                <button type="button" class="btn btn-danger fs-4" onclick="javascript:confirmationOnDelete(); return false;">Delete</button>
               </a>  
             </td>
           </tr>

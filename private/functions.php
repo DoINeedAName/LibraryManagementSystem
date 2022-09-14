@@ -78,8 +78,10 @@ function url_for($script_path=""){
   }
 
   function redirect_to_login(){
-    session_start();
-    if(basename($_SERVER['SCRIPT_NAME'])!='login.php' and !isset($_SESSION['id'])){
+    if(basename($_SERVER['SCRIPT_NAME'])=='index.php'){
+      ;
+    }
+    elseif(basename($_SERVER['SCRIPT_NAME'])!='login.php' and !isset($_SESSION['id'])){
       redirect_to(url_for('/auth/login.php'));
     }
   } 
