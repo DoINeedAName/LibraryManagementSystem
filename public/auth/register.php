@@ -14,7 +14,7 @@
     </div>
     <div class="card-body">
       <div class="form-check">
-        <form method="post" action="<?php echo this();?>">
+        <form method="post" action="<?php echo url_for('auth/register.php');?>">
           <div class="form-floating mb-3">
             <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter First Name" required>
             <label class="" for="first_name">First Name:</label>
@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="row mb-3 text-center">
-            <p>Already have an account? <a href="login.php">Sign in here</a></p>
+            <p>Already have an account? <a href="<?php echo url_for('auth/login.php'); ?>">Sign in here</a></p>
           </div>
         </form>
       </div>
@@ -70,7 +70,7 @@
         $new_id = mysqli_insert_id($db);
       }
       
-      redirect_to('../book/library.php');
+      redirect_to(url_for('book/library.php'));
     }
     else {
       echo '<div class="alert alert-danger text-center" role="alert">';

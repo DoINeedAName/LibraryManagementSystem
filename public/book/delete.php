@@ -7,5 +7,5 @@
   $id = $_GET['id']; 
   delete_book($id);
 
-  redirect_to('library.php');
+  redirect_to(url_for('book/library.php'));
 ?>

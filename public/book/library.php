@@ -40,11 +40,11 @@
             <td> <?php check_availability($book['available']); ?></td>
             <td>
               <a class="text-dark text-decoration-none" 
-                  href="<?php echo 'edit.php?id='.urlencode($book['book_id']);?>">
+                  href="<?php echo url_for('book/edit.php?id='.urlencode($book['book_id']));?>">
                 <button type="button" class="btn btn-warning fs-4">Edit</button>
               </a>
               <a class="text-light text-decoration-none" 
-                  href="<?php echo 'delete.php?id='.urlencode($book['book_id']);?>">
+                  href="<?php echo url_for('book/delete.php?id='.urlencode($book['book_id']));?>">
                 <button type="button" class="btn btn-danger fs-4" onclick="javascript:confirmationOnDelete(); return false;">Delete</button>
               </a>  
             </td>

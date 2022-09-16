@@ -23,11 +23,11 @@
 
     edit_book($book);
     
-    redirect_to('library.php');
+    redirect_to(url_for('book/library.php'));
   }
   else {
       if(!isset($_GET['id'])){
-        redirect_to('library.php');
+        redirect_to(url_for('book/library.php'));
       }
       else {
         $id = $_GET['id'];
@@ -51,7 +51,7 @@
     </div>
     <div class="card-body">
       <div class="form-check">
-        <form method="post" action="<?php echo ('edit.php?id=' .htmlspecialchars(urlencode($id)))?>">
+        <form method="post" action="<?php echo url_for('book/edit.php?id=' .htmlspecialchars(urlencode($id)))?>">
           <div class="form-floating mb-3">
             <input type="text" name="title" class="form-control" id="title" placeholder="Enter title" required value="<?php echo $title ?>">
             <label class="" for="title">Title:</label>
@@ -78,7 +78,7 @@
           <div class="row mb-3 text-center">
             <div class="container">
               <button class="btn btn-primary btn-lg m-1" type="submit" value="Update Book">Update Book</button>
-              <a href="library.php">
+              <a href="<?php echo url_for('book/libray.php'); ?>">
                 <button type="button" class="btn btn-primary btn-lg m-1" value="Discard Changes">Cancel</button>
               </a>
             </div>

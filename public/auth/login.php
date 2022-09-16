@@ -16,7 +16,7 @@ $user = [];
     if($user){
       if(password_verify($password, $user['password'])){
         sign_in($user);
-        redirect_to('../book/library.php');
+        redirect_to(url_for('book/library.php'));
         echo $user['email'] . " is logged in";
       }
       else {
@@ -35,7 +35,7 @@ $user = [];
     </div>
     <div class="card-body">
       <div class="form-check">
-        <form method="post" action="<?php echo this();?>">
+        <form method="post" action="<?php echo url_for('auth/login.php');?>">
           <!-- <div class="form-floating mb-2">
             <input type="text" name="username" class="form-control" id="username" placeholder="Enter Username" required>
             <label class="" for="username">Username:</label>
@@ -50,11 +50,11 @@ $user = [];
           </div>
           <div class="row mb-3 text-center">
             <div class="container">
-              <button class="btn btn-primary btn-lg m-1" type="submit" value="register">Login</button>
+              <button class="btn btn-primary btn-lg m-1" type="submit" value="login">Login</button>
             </div>
           </div>
           <div class="row mb-3 text-center">
-            <p>Don't have an account? <a href="register.php">Login</a></p>
+            <p>Don't have an account? <a href="<?php echo url_for('auth/register.php'); ?>">Register</a></p>
           </div>
         </form>
       </div>

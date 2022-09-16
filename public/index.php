@@ -17,12 +17,12 @@
   <div class="row">
     <div class="col ">
       <button type="button" class="btn btn-warning btn-lg m-3">
-        <a class="text-dark text-decoration-none fs-1 px-2" href="auth/register.php">Register</a>
+        <a class="text-dark text-decoration-none fs-1 px-2" href="<?php echo url_for('auth/register.php'); ?>">Register</a>
       </button>
     </div>
     <div class="col">
       <button type="button" class="btn btn-warning btn-lg m-3">
-        <a class="text-dark text-decoration-none fs-1 px-4" href="auth/login.php">Login</a>
+        <a class="text-dark text-decoration-none fs-1 px-4" href="<?php echo url_for('auth/login.php'); ?>">Login</a>
       </button>
     </div>
   </div>

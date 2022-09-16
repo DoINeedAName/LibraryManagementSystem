@@ -71,6 +71,9 @@ function url_for($script_path=""){
     if(basename($_SERVER['SCRIPT_NAME'])=='index.php'){
       ;
     }
+    elseif(basename($_SERVER['SCRIPT_NAME'])=='register.php' and !isset($_SESSION['id'])){
+      ;
+    }
     elseif(basename($_SERVER['SCRIPT_NAME'])!='login.php' and !isset($_SESSION['id'])){
       redirect_to(url_for('/auth/login.php'));
     }
